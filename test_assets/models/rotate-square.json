@@ -1,0 +1,9 @@
+{
+  "id": "rotate-square",
+  "name": "Rotate Square",
+  "type": "css",
+  "shape": "square",
+  "previewColor": "#A78BFA",
+  "stageBackground": "#7C3AED",
+  "use3d": false
+}

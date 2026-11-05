@@ -1,0 +1,9 @@
+{
+  "id": "slide-square",
+  "name": "Slide Square",
+  "type": "css",
+  "shape": "square",
+  "previewColor": "#34D399",
+  "stageBackground": "#10B981",
+  "use3d": false
+}

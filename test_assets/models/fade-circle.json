@@ -1,0 +1,9 @@
+{
+  "id": "fade-circle",
+  "name": "Fade Circle",
+  "type": "css",
+  "shape": "circle",
+  "previewColor": "#FBBF24",
+  "stageBackground": "#F59E0B",
+  "use3d": false
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motion Playground Web</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-neon">
+  <div id="entryGate" class="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
+    <div class="entry-card">
+      <h2 id="entryTitle">Вход в Motion Playground</h2>
+      <p class="entry-lead">Чтобы начать работу, укажите имя и подключитесь к совместной сессии.</p>
+      <form id="entryForm" class="entry-form">
+        <label class="field">
+          <span>Ваше имя <em class="required-mark">*</em></span>
+          <input
+            id="entryUserName"
+            type="text"
+            maxlength="32"
+            minlength="1"
+            required
+            placeholder="Например, Алексей"
+            autocomplete="nickname"
+            aria-required="true"
+          />
+        </label>
+        <button id="entryConnectBtn" class="primary" type="submit">Войти в сессию</button>
+        <p id="entryStatus" class="entry-status">Проверка сервера…</p>
+      </form>
+    </div>
+  </div>
+
+  <main id="mainApp" class="app" inert>
+    <header class="header">
+      <h1>Motion Playground</h1>
+      <p>Web‑версия для ПК: анимации, темы и совместная сессия для нескольких участников</p>
+    </header>
+
+    <section class="stage-wrap" aria-label="Сцена анимации">
+      <div class="stage-layout">
+        <div id="stage" class="stage">
+          <div class="glow" aria-hidden="true"></div>
+          <div id="stageBackdrop" class="stage-backdrop" hidden></div>
+          <div id="actor" class="actor local-actor">
+            <div id="shape" class="shape circle"></div>
+            <div id="model3d" class="css-model hidden" aria-label="3D модель куба" role="img">
+              <div class="cube3d">
+                <span class="face front">3D</span>
+                <span class="face back"></span>
+                <span class="face right"></span>
+                <span class="face left"></span>
+                <span class="face top"></span>
+                <span class="face bottom"></span>
+              </div>
+            </div>
+          </div>
+          <div id="screensaverOverlay" class="screensaver-overlay" hidden>
+            <img id="screensaverImage" alt="Заставка" />
+          </div>
+        </div>
+
+        <aside class="models-sidebar" aria-label="Объекты подключенных пользователей">
+          <div class="models-sidebar-head">
+            <h2>Пользователи</h2>
+            <span>4 видно сразу</span>
+          </div>
+          <div id="usersShowcase" class="users-showcase" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Настройки">
+      <label class="field">
+        <span>Тема</span>
+        <select id="themeSelect">
+          <option value="dark">Dark</option>
+          <option value="neon" selected>Neon</option>
+          <option value="pastel">Pastel</option>
+        </select>
+      </label>
+
+      <label class="toggle-row">
+        <span>3D</span>
+        <input id="use3d" type="checkbox" />
+      </label>
+
+      <label class="field speed-field">
+        <span>Скорость: <strong id="speedValue">x1.0</strong></span>
+        <input id="speed" type="range" min="0.5" max="3" step="0.1" value="1" />
+      </label>
+    </section>
+
+    <section class="animations" aria-label="Анимации">
+      <div class="section-title">
+        <h2>Анимации</h2>
+        <label class="toggle-row combine">
+          <input id="combine" type="checkbox" />
+          <span>Комбинировать: Вращение + Пульс</span>
+        </label>
+      </div>
+
+      <div id="animationList" class="animation-list" role="listbox" aria-label="Список анимаций"></div>
+
+      <div class="buttons">
+        <button id="startBtn" class="primary">Старт</button>
+        <button id="stopBtn" class="secondary">Стоп</button>
+      </div>
+    </section>
+
+    <section class="lab-panel" aria-label="Загрузка модели">
+      <div class="section-title">
+        <h2>Загрузка модели</h2>
+        <p id="loadedModelName" class="lab-status">Модель не загружена</p>
+      </div>
+      <div class="lab-grid">
+        <label class="field">
+          <span>Источник</span>
+          <select id="modelSourceSelect">
+            <option value="local">Локальный каталог</option>
+            <option value="http">HTTP</option>
+            <option value="cdn">Mock CDN</option>
+            <option value="errors">Источник с ошибками</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Идентификатор модели</span>
+          <input id="modelIdInput" type="text" value="pulse-circle" autocomplete="off" />
+        </label>
+        <div class="lab-actions">
+          <button id="loadModelBtn" class="primary" type="button">Загрузить модель</button>
+        </div>
+      </div>
+      <p id="modelLoadStatus" class="lab-status">Выберите источник и нажмите «Загрузить модель».</p>
+      <p id="modelLoadError" class="lab-error" hidden></p>
+    </section>
+
+    <section class="lab-panel" aria-label="Поиск фона и заставки">
+      <div class="section-title">
+        <h2>Фон и заставка</h2>
+      </div>
+      <div class="lab-grid">
+        <label class="field">
+          <span>Поиск фона</span>
+          <input id="backgroundQuery" type="text" placeholder="Например, sunset" autocomplete="off" />
+        </label>
+        <div class="lab-actions">
+          <button id="findBackgroundBtn" class="secondary" type="button">Найти фон</button>
+        </div>
+        <label class="field">
+          <span>Поиск заставки</span>
+          <input id="screensaverQuery" type="text" placeholder="Например, aurora" autocomplete="off" />
+        </label>
+        <div class="lab-actions">
+          <button id="findScreensaverBtn" class="secondary" type="button">Найти заставку</button>
+          <button id="clearScreensaverBtn" class="secondary" type="button">Скрыть заставку</button>
+        </div>
+      </div>
+      <p id="backgroundStatus" class="lab-status">Фон не выбран</p>
+      <p id="screensaverStatus" class="lab-status">Заставка не выбрана</p>
+    </section>
+
+    <section class="multiplayer" aria-label="Совместная сессия">
+      <div class="section-title">
+        <h2>Совместная сессия</h2>
+        <p id="sessionBadge" class="session-badge">Не подключено</p>
+      </div>
+
+      <div class="multiplayer-grid">
+        <div class="online-panel">
+          <h3>В сети</h3>
+          <ul id="onlineUsers" class="online-users"></ul>
+        </div>
+        <div class="feed-panel">
+          <h3>Действия участников</h3>
+          <div id="activityFeed" class="activity-feed" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="lab_utils.js"></script>
+  <script src="app.js"></script>
+  <script src="student_api.js"></script>
+  <script src="multiplayer.js"></script>
+</body>
+</html>

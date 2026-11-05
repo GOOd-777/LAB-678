@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sunset-orange",
+    "name": "Sunset Orange",
+    "tags": [
+      "sunset",
+      "orange",
+      "warm"
+    ],
+    "url": "/test_assets/backgrounds/sunset-orange.svg"
+  },
+  {
+    "id": "sunset-beach",
+    "name": "Sunset Beach",
+    "tags": [
+      "sunset",
+      "beach"
+    ],
+    "url": "/test_assets/backgrounds/sunset-beach.svg"
+  },
+  {
+    "id": "aurora-green",
+    "name": "Aurora Green",
+    "tags": [
+      "aurora",
+      "night"
+    ],
+    "url": "/test_assets/backgrounds/aurora-green.svg"
+  },
+  {
+    "id": "broken-bg",
+    "name": "Broken Background",
+    "tags": [
+      "broken"
+    ],
+    "url": "/test_assets/backgrounds/broken.svg"
+  },
+  {
+    "id": "missing-bg",
+    "name": "Missing Background",
+    "tags": [
+      "missing"
+    ],
+    "url": "/test_assets/backgrounds/does-not-exist.svg"
+  }
+]

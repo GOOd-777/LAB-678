@@ -1,0 +1,9 @@
+{
+  "id": "cube-3d",
+  "name": "CSS Cube",
+  "type": "css",
+  "shape": "cube",
+  "previewColor": "#22D3EE",
+  "stageBackground": "#1D4ED8",
+  "use3d": true
+}

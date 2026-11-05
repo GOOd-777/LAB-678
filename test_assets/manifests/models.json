@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pulse-circle",
+    "name": "Pulse Circle",
+    "type": "css",
+    "shape": "circle",
+    "previewColor": "#38BDF8",
+    "stageBackground": "#0EA5E9",
+    "use3d": false
+  },
+  {
+    "id": "rotate-square",
+    "name": "Rotate Square",
+    "type": "css",
+    "shape": "square",
+    "previewColor": "#A78BFA",
+    "stageBackground": "#7C3AED",
+    "use3d": false
+  },
+  {
+    "id": "slide-square",
+    "name": "Slide Square",
+    "type": "css",
+    "shape": "square",
+    "previewColor": "#34D399",
+    "stageBackground": "#10B981",
+    "use3d": false
+  },
+  {
+    "id": "fade-circle",
+    "name": "Fade Circle",
+    "type": "css",
+    "shape": "circle",
+    "previewColor": "#FBBF24",
+    "stageBackground": "#F59E0B",
+    "use3d": false
+  },
+  {
+    "id": "bounce-square",
+    "name": "Bounce Square",
+    "type": "css",
+    "shape": "square",
+    "previewColor": "#F472B6",
+    "stageBackground": "#DB2777",
+    "use3d": false
+  },
+  {
+    "id": "cube-3d",
+    "name": "CSS Cube",
+    "type": "css",
+    "shape": "cube",
+    "previewColor": "#22D3EE",
+    "stageBackground": "#1D4ED8",
+    "use3d": true
+  }
+]

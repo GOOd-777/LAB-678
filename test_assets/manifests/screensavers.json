@@ -1,0 +1,37 @@
+[
+  {
+    "id": "aurora-stars",
+    "name": "Aurora Stars",
+    "tags": [
+      "aurora",
+      "night",
+      "stars"
+    ],
+    "url": "/test_assets/screensavers/aurora-stars.svg"
+  },
+  {
+    "id": "sunset-stars",
+    "name": "Sunset Stars",
+    "tags": [
+      "sunset",
+      "night"
+    ],
+    "url": "/test_assets/screensavers/sunset-stars.svg"
+  },
+  {
+    "id": "broken-saver",
+    "name": "Broken Saver",
+    "tags": [
+      "broken"
+    ],
+    "url": "/test_assets/screensavers/broken-saver.svg"
+  },
+  {
+    "id": "missing-saver",
+    "name": "Missing Saver",
+    "tags": [
+      "missing"
+    ],
+    "url": "/test_assets/screensavers/does-not-exist.svg"
+  }
+]

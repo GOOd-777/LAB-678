@@ -1,0 +1,33 @@
+# Instructor reference solutions must never enter Git.
+/instructor_solutions/
+
+# Generated measurement reports (keep the folder).
+/reports/*
+!/reports/.gitkeep
+
+# Python
+.venv/
+.selenium-cache/
+.patch-build/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Selenium / OS
+*.log
+.DS_Store
+Thumbs.db
+chromedriver
+geckodriver
+
+# Editor
+.idea/
+.vscode/
+*.swp

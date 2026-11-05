@@ -1,0 +1,9 @@
+{
+  "id": "bounce-square",
+  "name": "Bounce Square",
+  "type": "css",
+  "shape": "square",
+  "previewColor": "#F472B6",
+  "stageBackground": "#DB2777",
+  "use3d": false
+}

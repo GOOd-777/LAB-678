@@ -1,0 +1,9 @@
+{
+  "id": "pulse-circle",
+  "name": "Pulse Circle",
+  "type": "css",
+  "shape": "circle",
+  "previewColor": "#38BDF8",
+  "stageBackground": "#0EA5E9",
+  "use3d": false
+}
